@@ -442,8 +442,8 @@ public class QuickfixConnection implements Application {
         newOrder.put("clId", clOrdID.getValue());
         newOrder.put("instrument", symbol.getValue());
         newOrder.put("type", OrdType.STOP_LIMIT == ordType.getValue() ? "Order" : "Quote");
-        newOrder.put("price", Double.toString(priceClient.getValue()));
-        newOrder.put("exAmount", Double.toString(cumQty.getValue()));
+        newOrder.put("price", Double.toString(priceClient.getValue().doubleValue()));
+        newOrder.put("exAmount", Double.toString(cumQty.getValue().doubleValue()));
         newOrder.put("state", getOrderStatus(ordStatus));
         
         // FIXME: double-check the following -mpk
